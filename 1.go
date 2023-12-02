@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"strconv"
-	"unicode"
 )
 
 func day1(c chan string) {
@@ -32,8 +31,4 @@ func day1(c chan string) {
 	}
 
 	log.Printf("1A Total: %d", total)
-}
-
-func isNumeric(b byte) bool {
-	return unicode.IsDigit(rune(b))
 }

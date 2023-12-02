@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"strings"
+	"unicode"
 )
 
 func main() {
@@ -14,6 +16,8 @@ func main() {
 	functions := map[string]func(c chan string){
 		"1":  day1,
 		"1b": day1b,
+		"2":  day2,
+		"2b": day2b,
 	}
 
 	if fn, ok := functions[args[1]]; ok {
@@ -41,4 +45,13 @@ func readInputLineByLine(fileName string, c chan string) {
 		log.Fatal(err)
 	}
 	close(c)
+}
+
+func isNumeric(b byte) bool {
+	return unicode.IsDigit(rune(b))
+}
+
+func splitString(s, sep string) (string, string) {
+	x := strings.Split(s, sep)
+	return x[0], x[1]
 }
