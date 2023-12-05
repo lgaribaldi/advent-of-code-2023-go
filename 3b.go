@@ -60,26 +60,3 @@ func readCompleteNumber(blueprint *[][]string, line int, col int) int64 {
 	}
 	return number
 }
-
-func unique[T comparable](s []T) []T {
-	var unique []T
-	m := map[T]bool{}
-
-	for _, v := range s {
-		if !m[v] {
-			m[v] = true
-			unique = append(unique, v)
-		}
-	}
-	return unique
-}
-
-func nonZeroValues(s []int64) []int64 {
-	var nonZero []int64
-	for _, v := range s {
-		if v != 0 {
-			nonZero = append(nonZero, v)
-		}
-	}
-	return nonZero
-}
