@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+	"strconv"
 	"strings"
 	"unicode"
 )
@@ -60,4 +62,27 @@ block1:
 		}
 	}
 	return intersect
+}
+
+func readLineOfNumbers(line string, sep string) []int64 {
+	items := strings.Split(line, sep)
+	var result []int64
+	for _, item := range items {
+		num, err := strconv.ParseInt(item, 10, 64)
+		if err != nil {
+			log.Fatal(err)
+		}
+		result = append(result, num)
+	}
+	return result
+}
+
+func removeItem[T comparable](list []T, item T) []T {
+	result := make([]T, 0)
+	for _, element := range list {
+		if element != item {
+			result = append(result, element)
+		}
+	}
+	return result
 }
