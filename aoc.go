@@ -26,6 +26,8 @@ func main() {
 		"6b": day6b,
 		"7":  day7,
 		"7b": day7b,
+		"8":  day8,
+		"8b": day8b,
 	}
 
 	if fn, ok := functions[args[1]]; ok {
