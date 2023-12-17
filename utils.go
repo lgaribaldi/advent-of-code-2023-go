@@ -77,6 +77,19 @@ func readLineOfNumbers(line string, sep string) []int64 {
 	return result
 }
 
+func readLineOfInt(line string, sep string) []int {
+	items := strings.Split(line, sep)
+	var result []int
+	for _, item := range items {
+		num, err := strconv.ParseInt(item, 10, 32)
+		if err != nil {
+			log.Fatal(err)
+		}
+		result = append(result, int(num))
+	}
+	return result
+}
+
 func removeItem[T comparable](list []T, item T) []T {
 	result := make([]T, 0)
 	for _, element := range list {
@@ -85,4 +98,11 @@ func removeItem[T comparable](list []T, item T) []T {
 		}
 	}
 	return result
+}
+
+func intAbs(v int) int {
+	if v < 0 {
+		return v * -1
+	}
+	return v
 }
