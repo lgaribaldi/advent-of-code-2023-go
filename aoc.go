@@ -47,6 +47,8 @@ func main() {
 		"17":  day17,
 		"18":  day18,
 		"18b": day18b,
+		"19":  day19,
+		"19b": day19b,
 	}
 
 	if fn, ok := functions[args[1]]; ok {
