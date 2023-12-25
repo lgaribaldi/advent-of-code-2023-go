@@ -68,7 +68,7 @@ func readLineOfNumbers(line string, sep string) []int64 {
 	items := strings.Split(line, sep)
 	var result []int64
 	for _, item := range items {
-		num, err := strconv.ParseInt(item, 10, 64)
+		num, err := strconv.ParseInt(strings.TrimSpace(item), 10, 64)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -81,7 +81,7 @@ func readLineOfInt(line string, sep string) []int {
 	items := strings.Split(line, sep)
 	var result []int
 	for _, item := range items {
-		num, err := strconv.ParseInt(item, 10, 32)
+		num, err := strconv.ParseInt(strings.TrimSpace(item), 10, 32)
 		if err != nil {
 			log.Fatal(err)
 		}
